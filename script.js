@@ -1,7 +1,14 @@
-const Cell = (x,y) =>{
+const gameBoard = ((doc)=>{   
+    const Cell = (x,y) =>{
     let state = null;
-}
-const gameBoard = (()=>{
+    //initial render
+    const domElement = doc.createElement("div");
+    domElement.classList = "square";
+    docGameBoard.appendChild(domElement);
+    return {state};
+    } 
+
+    const docGameBoard = doc.querySelector(".game-board");
     //generate game board
     const gridSize = 3;
     let gridArray = [];
@@ -12,5 +19,8 @@ const gameBoard = (()=>{
         }
         gridArray.push(gridRow);
     }
+    
+    
 
-})();
+})(document);
+
