@@ -1,3 +1,6 @@
+const Cell = (x,y) =>{
+    let state = null;
+}
 const gameBoard = (()=>{
     //generate game board
     const gridSize = 3;
