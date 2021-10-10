@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    text-align: center;
+    font-size: 3rem;
+}
+.game-board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+}
+.square{
+    background: #d5d5d575;
+    border-radius: 16px;
+    height: 128px;
+    width: 128px;
+}
