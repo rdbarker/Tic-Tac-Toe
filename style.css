@@ -17,4 +17,12 @@ body{
     border-radius: 16px;
     height: 128px;
     width: 128px;
+    font-size: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+.content{
+    margin: auto;
 }
