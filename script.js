@@ -7,7 +7,7 @@ const game = ((doc)=>{
         }
         const getState = () => state;
         const renderState = () => {
-            if (state) domElement.textContent = state;
+            if (state) domElement.textContent = state.toUpperCase();
             else domElement.textContent = "";
         }
         //initial render
