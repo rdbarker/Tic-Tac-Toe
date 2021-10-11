@@ -1,16 +1,22 @@
 const game = ((doc)=>{   
     const Cell = (pos) =>{
         const onClick = () =>{
-            console.log(pos);
+            state="x";
+            renderState();
+            checkWinner();
         }
-        let state = null;
+        const getState = () => state;
+        const renderState = () => {
+            if (state) domElement.textContent = state;
+            else domElement.textContent = "";
+        }
         //initial render
+        let state = null;
         const domElement = doc.createElement("div");
         domElement.classList = "square";
-        docGameBoard.appendChild(domElement);
+        gameBoard.appendChild(domElement);
         domElement.addEventListener("click",onClick);
-        
-        return {state};
+        return {getState};
     } 
     const generateGrid = (gridSize) =>{
     //generate game board
@@ -30,14 +36,16 @@ const game = ((doc)=>{
             [6,7,8]
         ]
         checkArray.forEach(checkPositions => {
-            const checkSum = checkPositions[0]+checkPositions[1]+checkPositions[2];
+            const checkSum = grid[checkPositions[0]].getState()
+                    +grid[checkPositions[1]].getState()
+                    +grid[checkPositions[2]].getState();
             if (checkSum==="xxx"||checkSum==="yyy"){
                 console.log("Winner");
-                break;
             }
         });
     }
-    const docGameBoard = doc.querySelector(".game-board");
+    const gameBoard = doc.querySelector(".game-board");
     const grid = generateGrid(3);
+    return grid;
 })(document);
 
