@@ -15,7 +15,7 @@ const game = ((doc) => {
             else domElement.textContent = "";
         }
         //initial render
-        let state = null;
+        let state = "";
         const domElement = doc.createElement("div");
         domElement.classList = "square";
         gameBoard.appendChild(domElement);
@@ -37,13 +37,15 @@ const game = ((doc) => {
             [0, 4, 8],
             [6, 4, 2],
             [2, 5, 8],
-            [6, 7, 8]
+            [6, 7, 8],
+            [3, 4, 5]
         ]
         checkArray.forEach(checkPositions => {
             const checkSum = grid[checkPositions[0]].getState()
                 + grid[checkPositions[1]].getState()
                 + grid[checkPositions[2]].getState();
-            if (checkSum === "xxx" || checkSum === "yyy") {
+            console.log(checkSum)
+            if (checkSum === "xxx" || checkSum === "ooo") {
                 console.log("Winner");
             }
         });
