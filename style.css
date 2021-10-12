@@ -5,16 +5,23 @@ body{
 }
 .header{
     text-align: center;
-    font-size: 3rem;
+    font-size: 100px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .game-board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
+    gap: 8px;
+    background-color:rgb(75, 75, 75);
+    color: rgb(75, 75, 75);
+    width: min-content;
 }
 .square{
-    background: #d5d5d575;
-    border-radius: 16px;
+    background: #ffffff;
     height: 128px;
     width: 128px;
     font-size: 140px;
